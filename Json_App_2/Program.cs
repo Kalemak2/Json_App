@@ -48,8 +48,8 @@ namespace Ksiegarnia
                             ShowProducts(produkts);
                             break;
                         case 3:
-                            ShowOrders(zamowienie);
                             Console.Clear();
+                            ShowOrders(zamowienie);
                             break;
                         default:
                             Console.WriteLine("Wybrano nieprawidłową opcję.");
@@ -126,7 +126,7 @@ namespace Ksiegarnia
             List<Zamowienie> zamowienie = new List<Zamowienie>();
 
             ShowProducts(produkty);
-            int suma = 0;
+            double suma = 0;
             while (true)
             {
 
@@ -145,6 +145,8 @@ namespace Ksiegarnia
                     Console.Write("Podaj ilość: ");
                     int ilosc = Convert.ToInt32(Console.ReadLine());
 
+                    suma += (wybranyProdukt.Cena * ilosc);
+                    
                     wybraneProdukty.Add(new Produkt(wybranyProdukt.Id, wybranyProdukt.Nazwa, wybranyProdukt.Producent, wybranyProdukt.Cena, wybranyProdukt.Kategoria, ilosc, wybranyProdukt.DataDostawy));
                     suma += cenaProduktu(wybranyProdukt) * ilosc;
                 }

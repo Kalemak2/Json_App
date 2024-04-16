@@ -15,9 +15,9 @@ namespace Json_App_2
         public List<Produkt> Produkty { get; set; }
         public string Dostawa { get; set; }
         public string Platnosc { get; set; }
-        public int Suma { get; set; }
+        public double Suma { get; set; }
 
-        public Zamowienie(int id, string imie, string nazwisko, string adres, List<Produkt> produkty, string dostawa, string platnosc, int suma)
+        public Zamowienie(int id, string imie, string nazwisko, string adres, List<Produkt> produkty, string dostawa, string platnosc, double suma)
         {
             Id = id;
             Imie = imie;
